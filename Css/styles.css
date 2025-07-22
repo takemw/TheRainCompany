@@ -455,3 +455,36 @@ body, html {
   color: #000;
   margin-left: 8px;
 }
+
+/*Responsive*/
+@media (max-width: 768px) {
+  .window1,
+  .window2,
+  .window3 {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    position: static;
+  }
+
+  #desktop {
+    overflow-y: auto;
+  }
+
+  .icon {
+    position: static;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .task-icons,
+  .tray-icons {
+    gap: 8px;
+  }
+
+  .taskbar-button img,
+  .start-button img {
+    width: 28px;
+    height: 28px;
+  }
+}
