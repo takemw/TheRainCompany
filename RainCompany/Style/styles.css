@@ -1,0 +1,457 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #141414;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Iconos del escritorio */
+.icon {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 100%;
+  height: auto;
+}
+.icon.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* hace que no respondan a clics */
+  filter: grayscale(5%); /* opcional: para hacerlos grises */
+}
+.icon:hover {
+  border-radius: 2px;
+  transform: scale(1.3); /* Agranda en hover */
+}
+/* Ventanas */
+.window1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  margin-top: 10%;
+  margin-left: 10%;
+  background-color: #e3e4ce;
+  border: 3px solid #666;
+  font-family: Tahoma, sans-serif;
+}
+.window2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  margin-top: 20%;
+  margin-left: 70%;
+  background-color: #e3e4ce;
+  border: 3px solid #666;
+  font-family: Tahoma, sans-serif;
+}
+
+.title-bar {
+  background: linear-gradient(to right, #0a246a, #007bff);
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  height: 24px;
+  border-bottom: 1px solid #000;
+}
+
+.title-bar .title {
+  flex-grow: 1;
+}
+
+.window-controls {
+  display: flex;
+  gap: 2px;
+}
+.window-controls button {
+  background-color: #c0c0c0;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.window-controls button:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.window-body {
+  padding: 10px;
+  color: #000;
+}
+/*Ventanas custom*/
+.assistant-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.assistant-preview {
+  grid-area: preview;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #777; 
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #aaa; /* Simula borde interno */
+  padding: 8px;
+  margin-left: 112px;
+  height: 65%;
+  width: 63%;
+}
+
+.assistant-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 2px solid #ccc; 
+}
+
+.assistant-list {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%
+}
+.assistant-list label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.assistant-list select {
+  width: 25%;
+  height: 220px;
+  font-family: Tahoma, sans-serif;
+  border: 1px solid #888;
+}
+
+.assistant-buttons {
+  position: absolute;
+  bottom: 90px;
+  left: 45%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.assistant-buttons button {
+  padding: 4px 12px;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  background-color: #e0e0e0;
+  border: 2px outset #fff;
+  cursor: pointer;
+}
+
+.assistant-buttons button:hover {
+  background-color: #d0d0d0;
+}
+/*Email-Window*/
+.title-bar {
+  background: #000080;
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.window-controls button {
+  width: 20px;
+  height: 20px;
+  background: #c0c0c0;
+  border: none;
+  margin-left: 2px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toolbar {
+  background: #f0f0f0;
+  padding: 4px 0;
+  border-bottom: 2px solid #999;
+  text-align: center;
+  height: 7%;
+  width: 100%;
+}
+
+.toolbar button { 
+  background: #e0e0e0;
+  margin-right: 4px;
+  background-color: #f0f0f0;
+  border: 1px outset #fff;
+  cursor: pointer;
+  margin: 0 6px;
+  padding: 2px 10px;
+  box-shadow: inset 1px 1px #ccc;
+}
+
+.toolbar button:hover {
+  background-color: #d0d0d0;
+}
+
+.header-info {
+  margin-top: 0px;
+  height: 20%;
+  padding: 0 1px;
+  font-size: small;
+  background: rgb(204, 204, 204);
+  border-bottom: 1px solid #999;
+}
+.info-line {
+  margin-bottom: 2px;
+}
+
+.email-body { 
+  padding: 5px;
+  height: 59%;
+  background: #fff;
+}
+
+.attachment {
+  border: 1px dashed #888;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.attachment img {
+  width: 32px;
+  height: 32px;
+}
+/*Cd Player*/
+.Window3 {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  margin-top: 2%;
+  margin-left: 65%;
+  background-color: #d4d0c8;
+  border: 3px solid #666;
+  font-family: Tahoma, sans-serif;
+  box-shadow: 2px 2px 4px #222;
+}
+
+.Window3 .title-bar {
+  background-color: #0a246a;
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  height: 24px;
+  border-bottom: 1px solid #000;
+}
+
+.Window3 .window-controls button {
+  background-color: #c0c0c0;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Window3 .window-controls button:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.Window3 .window-body {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.CD-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #888;
+  background-color: #fff;
+}
+
+.info-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.text-fields label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 2px;
+  border: 2px outset #808080;
+  box-shadow: inset 5px 1px #ccc;
+}
+
+.text-fields input {
+  width: 220px;
+  border: 1px solid #888;
+  background-color: #eee;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 1px;
+}
+
+.volume-bar input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #d4d0c8;
+  border: 1px solid #999;
+  margin: 6px 0;
+}
+.volume-bar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 14px;
+  background: #000;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.volume-bar input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 14px;
+  background: #000;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.player-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.player-buttons button {
+  width: 32px;
+  height: 26px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: 2px outset #fff;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: inset 1px 1px #ccc;
+}
+
+.player-buttons button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Barra de tareas */
+#taskbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to top, #d4d0c8, #e4e0d8);
+  border-top: 2px solid #7f9db9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-shadow: inset 0 1px 0 #ffffff;
+  font-family: Tahoma, sans-serif;
+}
+
+/* Contenedor a la izquierda (Start + botones) */
+.taskbar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Botón de inicio estilo XP */
+.start-button {
+  background: none;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start-button img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Botones de acceso rápido / apps */
+.task-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.taskbar-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.taskbar-button img {
+  width: 35px;
+  height: 35px;
+  image-rendering: optimizeQuality;
+}
+
+/* Hover para destacar */
+.taskbar-button:hover,
+.start-button:hover {
+  border-radius: 2px;
+  transform: scale(1.3);
+}
+
+/* Área de notificaciones y reloj */
+.tray-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 30px;
+}
+
+.tray-icons img {
+  width: 25px;
+  height: 25px;
+  image-rendering: optimizeQuality;
+}
+/* Estilo del reloj */
+.clock {
+  font-size: 13px;
+  font-weight: normal;
+  font-family: Tahoma, sans-serif;
+  color: #000;
+  margin-left: 8px;
+}
