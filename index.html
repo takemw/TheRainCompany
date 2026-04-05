@@ -48,14 +48,13 @@
       </div>
       <div class="email-body">
         <p>Kindly check the attached profile:</p>
-        <p>Profesional en Tecnologías de la Información (IT) y Desarrollo de Software y Videojuegos, con más de 1 año de experiencia práctica y aprendizaje continuo. 
-        Actualmente me desempeño como IT Administrator, siendo responsable de la gestión integral del área tecnológica en un entorno educativo.
-        Cuento con experiencia en soporte técnico nivel 1, administración de infraestructura tecnológica, inventarios, gestión de tickets, mantenimiento de equipos, 
-        configuración de redes, impresoras y dispositivos audiovisuales. Manejo plataformas corporativas como Google Workspace (Consola de Administración), gestión de credenciales, correos institucionales y soporte a usuarios.
-        Complemento mi perfil con conocimientos en desarrollo de software utilizando C#, .NET, HTML, CSS, JavaScript, SQL y MySQL, así como experiencia en Unity para desarrollo devideojuegos. Poseo habilidades en diseño gráfico y edición multimedia mediante herramientas como Adobe, Blender y CapCut.
-        Me caracterizo por ser una persona autónoma, organizada y resolutiva, con enfoque en la optimización de procesos tecnológicos y la continuidad operativa. Nivel de inglés B1 (intermedio), con capacidad de lectura técnica, comprensión de documentación y comunicación básica en entornos profesionales. </p>
+        <p>Profesional en Tecnologías de la Información (IT) y Desarrollo de Software y Videojuegos, con más de 1 año de experiencia práctica y aprendizaje continuo. Actualmente me desempeño como IT Administrator, siendo responsable de la gestión integral del área tecnológica en un entorno educativo.
+        Cuento con experiencia en soporte técnico nivel 1, administración de infraestructura tecnológica, inventarios, gestión de tickets, mantenimiento de equipos, configuración de redes, impresoras y dispositivos audiovisuales. Manejo plataformas corporativas como Google Workspace (Consola de Administración), 
+        gestión de credenciales, correos institucionales y soporte a usuarios. Complemento mi perfil con conocimientos en desarrollo de software utilizando C#, .NET, HTML, CSS, JavaScript, SQL y MySQL, así como experiencia en Unity para desarrollo de videojuegos. Poseo habilidades en diseño gráfico y edición multimedia mediante herramientas como Adobe, Blender y CapCut.
+
+Me caracterizo por ser una persona autónoma, organizada y resolutiva, con enfoque en la optimización de procesos tecnológicos y la continuidad operativa. Nivel de inglés B1 (intermedio), con capacidad de lectura técnica, comprensión de documentación y comunicación básica en entornos profesionales. </p>
       <div class="attachment">
-          <img src="../Images/XD/Skull.jpg" alt="Profile Picture">
+          <img src="../Images/XD/Gasly.jpg" alt="Profile Picture">
           <p><strong>PORTFOLIO-INFO.TXT</strong></p>
         </div>
         <p>Coming from me with.</p>
@@ -72,58 +71,106 @@
       </div>
       <div class="window-body assistant-body">
         <div class="assistant-list">
-         <select size="10">
-           <option>Office Clip</option>
-           <option>Red Dot</option>
-           <option>Robot</option>
-           <option>Office Logo</option>
-           <option>Mother Nature</option>
-           <option>Office Cat</option>
-           <option>Rocky</option>
-           <option selected>Merlin</option>
-           <option>Courtney</option>
-           <option>Farl</option>
+         <select size="10">    
+        <option value="Office Clip" data-img="Images/XD/1.jpg" selected>Office Clip</option>
+        <option value="Red Dot" data-img="Images/XD/2.jpg">Red Dot</option>
+        <option value="Robot" data-img="Images/XD/3.jpg">Robot</option>
+        <option value="Happy kinda" data-img="Images/XD/4.jpg">Happy Kinda</option>
+        <option value="Mother Nature" data-img="Images/XD/5.jpg">Mother Nature</option>
+        <option value="Office Cat" data-img="Images/XD/6.jpg">Office Cat</option>
+        <option value="Rocky" data-img="Images/XD/7.jpg">Rocky</option>
+        <option value="Merlin" data-img="Images/XD/8.jpg" >Merlin</option>
+        <option value="Courtney" data-img="Images/XD/9.jpg">Courtney</option>
+        <option value="Farl" data-img="Images/XD/10.jpg">Farl</option>
+        <option value="Blue Screen Romance" data-img="Images/XD/11.jpg">Blue Screen Romance</option>
+        <option value="Cached Memories" data-img="Images/XD/12.jpg">Cached Memories</option>
+        <option value="Ctrl+Alt+Del Heart" data-img="Images/XD/13.jpg">Ctrl+Alt+Del Heart</option>
+        <option value="Dial-Up Dreams" data-img="Images/XD/14.jpg">Dial-Up Dreams</option>
+        <option value="Ghost in the Desktop" data-img="Images/XD/15.jpg">Ghost in the Desktop</option>
+        <option value="Chibi Overclock" data-img="Images/XD/16.jpg">Chibi Overclock</option>
+        <option value="Download Your Soul" data-img="Images/XD/17.jpg">Download Your Soul</option>
+        <option value="Akira Kernel Panic" data-img="Images/XD/18.jpg">Akira Kernel Panic</option>
+        <option value="Zero Ping Duelist" data-img="Images/XD/19.jpg">Zero Ping Duelist</option>
+        <option value="Root Access" data-img="Images/XD/20.jpg">Root Access</option>
+        <option value="Terminal Noise" data-img="Images/XD/Gasly.jpg">Terminal Noise</option>
+        <option value="Port 8080" data-img="Images/XD/Halo.jpg">Port 8080</option>
+        <option value="Debug Mode On" data-img="Images/XD/Mew1.jpg">Debug Mode On</option>
+        <option value="Background Process" data-img="Images/XD/Mew3.jpg">Background Process</option>
+        <option value="Waiting..." data-img="Images/XD/MIUW.jpg">Waiting...</option>
          </select>
         </div>
       <div class="assistant-preview">
-        <img src="../Images/XD/Lain.jpg" alt="Lain" />
+        <img src="../Images/XD/1.jpg" alt="Lain" />
       </div>
       <div class="assistant-buttons">
         <button>Set as Default</button>
+        <button>Show Image</button>
         <button>Cancel</button>
       </div>
       </div>
     </div>
+    <!-- Ventana modal estilo retro (se inserta en el HTML una sola vez) -->
+    <div id="imageModal" class="modal hidden" aria-hidden="true">
+  <div class="modal-window" role="dialog" aria-modal="true" aria-label="Imagen en grande">
+    <div class="title-bar">
+      <span class="title" id="modalTitle">Preview</span>
+      <div class="window-controls">
+        <button id="modalCloseBtn" class="close-btn" type="button">X</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <img id="modalImg" src="" alt="Imagen en grande" />
+    </div>
+  </div>
+    </div>
     <div class="Window3">
-      <div class="title-bar">
-        <span class="title">CD PLayer</span>
-        <div class="window-controls">
-          <button class="min-btn">_</button>
-          <button class="max-btn">🗖</button>
-          <button class="close-btn">X</button>
-        </div>
+  <div class="title-bar">
+    <span class="title">CD Player</span>
+    <div class="window-controls">
+      <button class="min-btn">_</button>
+      <button class="max-btn">🗖</button>
+      <button class="close-btn">X</button>
+    </div>
+  </div>
+
+  <div class="window-body">
+    <div class="CD-preview">
+      <!-- Miniatura (se actualiza con oEmbed) -->
+      <img class="cd-thumb" src="../Images/XD/Gasly.jpg" alt="Thumbnail" />
+    </div>
+
+    <div class="info-controls">
+
+      <!-- (Nuevo) URL de YouTube -->
+      <div class="yt-row">
+        <input class="yt-url" type="text" placeholder="Pega URL de YouTube aquí" />
+        <button class="yt-load" type="button">Load</button>
       </div>
-       <div class="window-body">
-        <div class="CD-preview">
-          <img src="../Images/XD/Gasly.jpg" alt="Gasly" />
-        </div>
-        <div class="info-controls">
-           <div class="text-fields">
-             <label>Artist: <input type="text" value="Boa"></label>
-             <label>Track: <input type="text" value="Duvet"></label>
-           </div>
-           <div class="volume-bar">
-             <input type="range" min="0" max="100" value="40">
-           </div>
-           <div class="player-buttons">
-             <button>◁◁</button>
-             <button>▶</button>
-             <button>▐ ▌</button>
-             <button>▮</button>
-             <button>▷▷</button>
-           </div>
-        </div>
+
+      <div class="text-fields">
+        <label>Artist: <input class="artist" type="text" value="-" readonly></label>
+        <label>Track: <input class="track" type="text" value="-" readonly></label>
       </div>
+
+      <div class="volume-bar">
+        <input class="vol" type="range" min="0" max="100" value="100">
+      </div>
+
+      <div class="player-buttons">
+        <button type="button" data-action="prev">◁◁</button>
+        <button type="button" data-action="play">▶</button>
+        <button type="button" data-action="pause">▐ ▌</button>
+        <button type="button" data-action="stop">▮</button>
+        <button type="button" data-action="next">▷▷</button>
+      </div>
+
+      <!-- (Nuevo) Contenedor del reproductor YouTube (lo dejamos invisible) -->
+      <div class="yt-player-host">
+        <div id="ytPlayer"></div>
+      </div>
+    </div>
+  </div>
     </div>
     <!-- Barra de tareas -->
     <div id="taskbar">
@@ -152,6 +199,15 @@
         <span class="clock" id="clock">--:--</span>
       </div>
     </div>
+    
+<!-- Importa tu JS -->
+<script src="JS/AsistanList.js"></script>
+
+<!-- YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- Tu JS -->
+<script src="js/CDPlayer.js" defer></script>
   </div>
 </body>
 </html>
