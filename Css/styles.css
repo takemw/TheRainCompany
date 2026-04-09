@@ -1,4 +1,8 @@
-body, html {
+/* =====================================================
+   1. RESET GLOBAL Y BASE DEL DOCUMENTO
+===================================================== */
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -9,92 +13,57 @@ body, html {
   overflow: auto;
 }
 
-#desktop {
+/* =====================================================
+   2. CONTENEDOR PRINCIPAL (DESKTOP)
+===================================================== */
+#DesktopApps{
   position: relative;
-  min-height:92.3vh;
-  padding-bottom:60px;
+  width: 100%;
+  height: 100%;
 }
 
-/* Iconos del escritorio */
-.icon {
-  position: absolute;
-  width: 4%;
-  height: 4%;
+/* =====================================================
+   3. ICONOS DEL ESCRITORIO
+===================================================== */
+.icon{
+  position: relative;
+  width: 4.5%;
+  height: 4.5%;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: clamp(20px, 5vh, 28px);
   cursor: pointer;
 }
-
 .icon img {
   width: 100%;
   height: auto;
 }
 .icon.disabled {
   opacity: 0.5;
-  pointer-events: none; /* hace que no respondan a clics */
-  filter: grayscale(5%); /* opcional: para hacerlos grises */
+  pointer-events: none;
+  filter: grayscale(5%);
 }
 .icon:hover {
   border-radius: 2px;
-  transform: scale(1.3); /* Agranda en hover */
+  transform: scale(1.3);
 }
-/* Ventanas */
-.window2 {
-  position:absolute;
-  width: min(550px, 95vw);
-  height: min(400px, 60vh);
-  top: clamp(25px, 30vh, 350px);
-  left: clamp(25px, 67vw, calc(100vw - 450px));
-
-  background-color: #e3e4ce;
-  border: 3px solid #666;
-  font-family: Tahoma, sans-serif;
-}
-/*Imagen preview*/
-/* ============ Modal / Ventana grande ============ */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  padding: 16px;
+.desktop-center{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  display: flex;            
+  justify-content: center;   
+  align-items: center;       
+  flex-wrap: wrap;           
+  gap: 50px;                  
 }
 
-.modal.hidden {
-  display: none;
-}
-
-.modal-window {
-  width: min(900px, 95vw);
-  height: min(650px, 85vh);
-  background: #e3e4ce;
-  border: 3px solid #666;
-  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.modal-body {
-  flex: 1;
-  background: #fff;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-body img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border: 2px solid #777;
-  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #aaa;
-  background: #fff;
-  cursor: zoom-in;
-}
-
+/* =====================================================
+   4. VENTANAS GENERALES (ESTILO BASE)
+===================================================== */
 .title-bar {
   background: linear-gradient(to right, #0a246a, #007bff);
   color: white;
@@ -106,11 +75,9 @@ body, html {
   height: 24px;
   border-bottom: 1px solid #000;
 }
-
 .title-bar .title {
   flex-grow: 1;
 }
-
 .window-controls {
   display: flex;
   gap: 2px;
@@ -124,50 +91,119 @@ body, html {
   cursor: pointer;
   padding: 0;
 }
-
 .window-controls button:hover {
   background-color: #ff0000;
   color: #fff;
 }
-
 .window-body {
   padding: 10px;
   color: #000;
 }
-/*Ventanas custom*/
+
+/* =====================================================
+   5. WINDOW 1 — EMAIL
+===================================================== */
+.window1 {
+  position: absolute;
+  width: min(600px, 92vw);
+  height: min(650px, 78vh);
+  top: clamp(110px, 6vh, 60px);
+  left: clamp(150px, 8vw, 90px);
+  background-color: #e3e4ce;
+  border: 3px solid #666;
+  font-family: Tahoma, sans-serif;
+}
+.toolbar {
+  background: #f0f0f0;
+  padding: 4px 0;
+  border-bottom: 2px solid #999;
+  text-align: center;
+  height: 5%;
+  width: 100%;
+}
+.toolbar button {
+  background-color: #f0f0f0;
+  border: 1px outset #fff;
+  cursor: pointer;
+  margin: 0 6px;
+  padding: 2px 10px;
+  box-shadow: inset 1px 1px #ccc;
+}
+.toolbar button:hover {
+  background-color: #d0d0d0;
+}
+.header-info {
+  margin-top: 0px;
+  height: 12%;
+  padding: 0 0.5px;
+  font-size: small;
+  background: rgb(204, 204, 204);
+  border-bottom: 1px solid #999;
+}
+.info-line {
+  margin-bottom: 1px;
+}
+.email-body {
+  padding: 5px;
+  height: 58.5%;
+  background: #fff;
+}
+.attachment {
+  border: 1px dashed #888;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.attachment img {
+  width: 32px;
+  height: 32px;
+}
+
+/* =====================================================
+   6. WINDOW 2 — OFFICE ASSISTANT
+===================================================== */
+.window2 {
+  position: absolute;
+  width: min(550px, 95vw);
+  height: min(400px, 60vh);
+  top: clamp(25px, 30vh, 350px);
+  left: clamp(25px, 67vw, calc(100vw - 450px));
+  background-color: #e3e4ce;
+  border: 3px solid #666;
+  font-family: Tahoma, sans-serif;
+}
 .assistant-body {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
 .assistant-preview {
   grid-area: preview;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border: 2px solid #777; 
-  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #aaa; /* Simula borde interno */
+  border: 2px solid #777;
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #aaa;
   padding: 8px;
   margin-left: 160px;
   height: 65%;
   width: 63%;
 }
-
 .assistant-preview img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border: 2px solid #ccc; 
+  border: 2px solid #ccc;
 }
-
 .assistant-list {
   position: absolute;
   top: 10px;
   left: 10px;
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 .assistant-list label {
   display: block;
@@ -181,7 +217,6 @@ body, html {
   font-family: Tahoma, sans-serif;
   border: 1px solid #888;
 }
-
 .assistant-buttons {
   position: absolute;
   bottom: 80px;
@@ -190,7 +225,6 @@ body, html {
   display: flex;
   gap: 10px;
 }
-
 .assistant-buttons button {
   padding: 4px 55px;
   font-family: Tahoma, sans-serif;
@@ -199,99 +233,53 @@ body, html {
   border: 2px outset #fff;
   cursor: pointer;
 }
-
 .assistant-buttons button:hover {
   background-color: #d0d0d0;
 }
-/*Email-Window*/
-.window1 {
-  position:absolute;
-  width: min(600px, 92vw);
-  height: min(650px, 78vh);
-  top: clamp(110px, 6vh, 60px);
-  left: clamp(150px, 8vw, 90px);
-  background-color: #e3e4ce;
-  border: 3px solid #666;
-  font-family: Tahoma, sans-serif;
+
+/* =====================================================
+   7. WINDOW 2 — PRE VIEW ASSISTANT IMG
+ ===================================================== */
+ .modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+  padding:16px;
 }
-.title-bar {
-  background: #000080;
-  color: white;
-  padding: 4px 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
+.modal.hidden{ display:none; }
+.modal-window{
+  width:min(1000px,100vw);
+  height:min(850px,95vh);
+  background:#c9bfad;
+  border:3px solid #666;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.modal-body{
+  flex:1;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.modal-body img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border:2px solid #777;
 }
 
-.window-controls button {
-  width: 30px;
-  height: 20px;
-  background: #c0c0c0;
-  border: none;
-  margin-left: 2px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.toolbar {
-  background: #f0f0f0;
-  padding: 4px 0;
-  border-bottom: 2px solid #999;
-  text-align: center;
-  height: 5%;
-  width: 100%;
-}
-
-.toolbar button { 
-  background: #e0e0e0;
-  margin-right: 4px;
-  background-color: #f0f0f0;
-  border: 1px outset #fff;
-  cursor: pointer;
-  margin: 0 6px;
-  padding: 2px 10px;
-  box-shadow: inset 1px 1px #ccc;
-}
-
-.toolbar button:hover {
-  background-color: #d0d0d0;
-}
-
-.header-info {
-  margin-top: 0px;
-  height: 12%;
-  padding: 0 0.5px;
-  font-size: small;
-  background: rgb(204, 204, 204);
-  border-bottom: 1px solid #999;
-}
-.info-line {
-  margin-bottom: 1px;
-}
-
-.email-body { 
-  padding: 5px;
-  height: 58.5%;
-  background: #fff;
-}
-
-.attachment {
-  border: 1px dashed #888;
-  padding: 2px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.attachment img {
-  width: 32px;
-  height: 32px;
-}
-/*Cd Player*/
+/* =====================================================
+   8. WINDOW 3 — CD PLAYER
+===================================================== */
 .Window3 {
-  position:absolute;
+  position: absolute;
   width: min(420px, 92vw);
   top: clamp(12px, 4vh, 40px);
   left: clamp(12px, 58vw, calc(100vw - 440px));
@@ -300,7 +288,6 @@ body, html {
   font-family: Tahoma, sans-serif;
   box-shadow: 2px 2px 4px #222;
 }
-
 .Window3 .title-bar {
   background-color: #0a246a;
   color: white;
@@ -312,36 +299,18 @@ body, html {
   height: 24px;
   border-bottom: 1px solid #000;
 }
-
-.Window3 .window-controls button {
-  background-color: #c0c0c0;
-  border: 1px solid #000;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  cursor: pointer;
-  padding: 0;
-}
-
-.Window3 .window-controls button:hover {
-  background-color: #ff0000;
-  color: #fff;
-}
-
 .Window3 .window-body {
   display: flex;
   padding: 10px;
   gap: 10px;
 }
-
 .CD-preview img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border: 2px solid #888;
   background-color: #fff;
 }
-
 .info-controls {
   display: flex;
   flex-direction: column;
@@ -349,7 +318,6 @@ body, html {
   gap: 6px;
   width: 100%;
 }
-
 .text-fields label {
   display: flex;
   justify-content: space-between;
@@ -358,7 +326,6 @@ body, html {
   border: 2px outset #808080;
   box-shadow: inset 5px 1px #ccc;
 }
-
 .text-fields input {
   width: 220px;
   border: 1px solid #888;
@@ -367,9 +334,7 @@ body, html {
   font-size: 12px;
   padding: 1px;
 }
-
 .volume-bar input[type="range"] {
-  -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 8px;
@@ -377,196 +342,20 @@ body, html {
   border: 1px solid #999;
   margin: 6px 0;
 }
-.volume-bar input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 10px;
-  height: 14px;
-  background: #000;
-  cursor: pointer;
-  border: 1px solid #000;
-}
-.volume-bar input[type="range"]::-moz-range-thumb {
-  width: 10px;
-  height: 14px;
-  background: #000;
-  cursor: pointer;
-  border: 1px solid #000;
-}
 .player-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 6px;
   margin-top: 4px;
 }
-
-.player-buttons button {
-  width: 32px;
-  height: 26px;
-  font-size: 14px;
-  background-color: #f0f0f0;
-  border: 2px outset #fff;
-  cursor: pointer;
-  padding: 0;
-  box-shadow: inset 1px 1px #ccc;
-}
-
 .player-buttons button:hover {
   background-color: #d0d0d0;
 }
-/* fila para pegar URL */
-.Window3 .yt-row{
-  display:flex;
-  gap:6px;
-  margin-bottom:6px;
-}
-
-.Window3 .yt-url{
-  flex:1;
-  border: 1px solid #888;
-  background:#fff;
-  font-family: monospace;
-  font-size: 12px;
-  padding: 3px 6px;
-}
-
-.Window3 .yt-load{
-  padding: 3px 10px;
-  font-size: 12px;
-  background-color: #e0e0e0;
-  border: 2px outset #fff;
-  cursor: pointer;
-}
-
-.Window3 .yt-load:hover{
-  background-color:#d0d0d0;
-}
-
-/* el player existe pero no estorba la UI */
 .Window3 .yt-player-host{
   width: 1px;
   height: 1px;
   overflow: hidden;
   position: absolute;
-  left: -9999px; /* fuera de pantalla */
+  left: -9999px;
 }
 
-/* Barra de tareas */
-#taskbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(to top, #d4d0c8, #e4e0d8);
-  border-top: 2px solid #7f9db9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  box-shadow: inset 0 1px 0 #ffffff;
-  font-family: Tahoma, sans-serif;
-}
-
-/* Contenedor a la izquierda (Start + botones) */
-.taskbar-left {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Botón de inicio estilo XP */
-.start-button {
-  background: none;
-  border: none;
-  align-items: center;
-  cursor: pointer;
-}
-
-.start-button img {
-  width: 35px;
-  height: 35px;
-}
-
-/* Botones de acceso rápido / apps */
-.task-icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.taskbar-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.taskbar-button img {
-  width: 35px;
-  height: 35px;
-  image-rendering: optimizeQuality;
-}
-
-/* Hover para destacar */
-.taskbar-button:hover,
-.start-button:hover {
-  border-radius: 2px;
-  transform: scale(1.3);
-}
-
-/* Área de notificaciones y reloj */
-.tray-icons {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-right: 30px;
-}
-
-.tray-icons img {
-  width: 25px;
-  height: 25px;
-  image-rendering: optimizeQuality;
-}
-/* Estilo del reloj */
-.clock {
-  font-size: 13px;
-  font-weight: normal;
-  font-family: Tahoma, sans-serif;
-  color: #000;
-  margin-left: 8px;
-}
-
-/*Responsive*/
-@media (max-width: 768px) {
-  .window1,
-  .window2,
-  .window3 {
-    width: 90%;
-    height: auto;
-    margin: 20px auto;
-    position: static;
-  }
-
-  #desktop {
-    overflow-y: auto;
-  }
-
-  .icon {
-    position: static;
-    display: inline-block;
-    margin: 10px;
-  }
-
-  .task-icons,
-  .tray-icons {
-    gap: 8px;
-  }
-
-  .taskbar-button img,
-  .start-button img {
-    width: 28px;
-    height: 28px;
-  }
-}

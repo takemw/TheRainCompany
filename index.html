@@ -9,21 +9,27 @@
 <body>
   <div id="desktop">
     <!-- Íconos de apps -->
-    <div id="DesktopApps">
-      <div class="icon disabled" style="top: 1%; left: 1%;"><img src="Images/App/CMD.png" alt="CMD" /></div>
-      <div class="icon disabled" style="top: 1%; left: 7%;"><img src="Images/App/Git.png" alt="Git" /></div>
-      <div class="icon disabled" style="top: 10%; left: 1%;"><img src="Images/App/Spotify.png" alt="Spotify" /></div>
-      <div class="icon disabled" style="top: 20%; left: 1%;"><img src="Images/App/Adobe.png" alt="Adobe" /></div>
-      <div class="icon disabled" style="top: 30%; left: 1%;"><img src="Images/App/Discord.png" alt="Discord" /></div>
-      <div class="icon disabled" style="top: 40%; left: 1%;"><img src="Images/App/Html.png" alt="Html" /></div>
-      <div class="icon disabled" style="top: 50%; left: 1%;"><img src="Images/App/Github.png" alt="Github" /></div>
-      <div class="icon disabled" style="top: 60%; left: 1%;"><img src="Images/App/css.png" alt="css" /></div>
-      <div class="icon disabled" style="top: 70%; left: 1%;"><img src="Images/App/JS.png" alt="JS" /></div>
-      <div class="icon disabled" style="top: 80%; left: 1%;"><img src="Images/App/Gmail.png" alt="Gmail" /></div>
-      <div class="icon" style="top: 30%; left: 45%;"><img src="Images/App/Blender.png" alt="Blender" /></div>
-      <div class="icon" style="top: 30%; left: 55%;"><img src="Images/App/Video.png" alt="Video" /></div>
-      <div class="icon" style="top: 50%; left: 45%;"><img src="Images/App/Visual.png" alt="Visual" /></div>
-      <div class="icon" style="top: 50%; left: 55%;"><img src="Images/App/Unity.png" alt="Unity" /></div>
+    <div id="DesktopApps">  
+      <!-- Columna izquierda -->
+       <div class="desktop-left">
+        <div class="icon disabled" ><img src="Images/App/CMD.png" alt="CMD" /></div>
+        <div class="icon disabled" ><img src="Images/App/Git.png" alt="Git" /></div>
+        <div class="icon disabled" ><img src="Images/App/Spotify.png" alt="Spotify" /></div>
+        <div class="icon disabled" ><img src="Images/App/Adobe.png" alt="Adobe" /></div>
+        <div class="icon disabled" ><img src="Images/App/Discord.png" alt="Discord" /></div>
+        <div class="icon disabled" ><img src="Images/App/Html.png" alt="Html" /></div>
+        <div class="icon disabled" ><img src="Images/App/Github.png" alt="Github" /></div>
+        <div class="icon disabled" ><img src="Images/App/css.png" alt="css" /></div>
+        <div class="icon disabled" ><img src="Images/App/JS.png" alt="JS" /></div>
+        <div class="icon disabled" ><img src="Images/App/Gmail.png" alt="Gmail" /></div>
+        </div>
+      <!-- Centro-->
+       <div class="desktop-center">
+         <div class="icon"><img src="Images/App/Blender.png" alt="Blender" /></div>
+         <div class="icon"><img src="Images/App/Video.png" alt="Video" /></div>
+         <div class="icon"><img src="Images/App/Visual.png" alt="Visual" /></div>
+         <div class="icon"><img src="Images/App/Unity.png" alt="Unity" /></div>    
+       </div>
     </div>
     <!-- Ventanas abiertas -->    
     <div class="window1">
@@ -60,6 +66,7 @@ Me caracterizo por ser una persona autónoma, organizada y resolutiva, con enfoq
         <p>Coming from me with.</p>
       </div>
     </div>
+    <!-- ASSI-->
     <div class="window2" >
       <div class="title-bar">
         <span class="title">Office Assistant.exe</span>
@@ -109,21 +116,7 @@ Me caracterizo por ser una persona autónoma, organizada y resolutiva, con enfoq
       </div>
       </div>
     </div>
-    <!-- Ventana modal estilo retro (se inserta en el HTML una sola vez) -->
-    <div id="imageModal" class="modal hidden" aria-hidden="true">
-  <div class="modal-window" role="dialog" aria-modal="true" aria-label="Imagen en grande">
-    <div class="title-bar">
-      <span class="title" id="modalTitle">Preview</span>
-      <div class="window-controls">
-        <button id="modalCloseBtn" class="close-btn" type="button">X</button>
-      </div>
-    </div>
-
-    <div class="modal-body">
-      <img id="modalImg" src="" alt="Imagen en grande" />
-    </div>
-  </div>
-    </div>
+    <!-- CD PLAYER-->
     <div class="Window3">
   <div class="title-bar">
     <span class="title">CD Player</span>
@@ -164,49 +157,33 @@ Me caracterizo por ser una persona autónoma, organizada y resolutiva, con enfoq
         <button type="button" data-action="stop">▮</button>
         <button type="button" data-action="next">▷▷</button>
       </div>
-
-      <!-- (Nuevo) Contenedor del reproductor YouTube (lo dejamos invisible) -->
+      
       <div class="yt-player-host">
         <div id="ytPlayer"></div>
       </div>
+
     </div>
   </div>
     </div>
-    <!-- Barra de tareas -->
-    <div id="taskbar">
-      <!-- Botón de Inicio -->
-      <button class="start-button" id="btn-start">
-        <img src="../Images/App/Start.png" />
-      </button>
-    
-      <!-- Aplicaciones abiertas / acceso rápido -->
-      <div class="task-icons">
-        <button class="taskbar-button" id="btn-Folder">
-          <img src="../Images/App/Folder.png"/>
-        </button>
-        <button class="taskbar-button" id="btn-Messenger">
-          <img src="../Images/App/Messenger.png"/>
-        </button>
-        <button class="taskbar-button" id="btn-Messenger">
-          <img src="../Images/App/Spotify.png"/>
-        </button>
-      </div>
-    
-      <!-- Área de notificaciones -->
-      <div class="tray-icons">
-        <img src="../Images/App/Sound.png"/>
-        <img src="../Images/App/Internet.png"/>
-        <span class="clock" id="clock">--:--</span>
+     <!-- PreVIEW -->
+    <div id="imageModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-window" role="dialog" aria-modal="true" aria-label="Imagen en grande">
+        <div class="title-bar">
+          <span class="title" id="modalTitle">Preview</span>
+          <div class="window-controls">
+          <button id="modalCloseBtn" class="close-btn" type="button">X</button>
       </div>
     </div>
-    
-<!-- Importa tu JS -->
+
+    <div class="modal-body">
+      <img id="modalImg" src="" alt="Imagen en grande" />
+    </div>
+  </div>
+    </div>
+
+
 <script src="JS/AsistanList.js"></script>
-
-<!-- YouTube IFrame API -->
 <script src="https://www.youtube.com/iframe_api"></script>
-
-<!-- Tu JS -->
 <script src="js/CDPlayer.js" defer></script>
   </div>
 </body>

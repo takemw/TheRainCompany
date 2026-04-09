@@ -100,8 +100,7 @@
     // cargar en player
     if (player && playerReady) {
       player.loadVideoById(id);
-      player.setVolume(Number(vol.value || 40));
-      // No hacemos autoplay forzado; el usuario le da ▶
+      player.setVolume(Number(vol.value || 100));
     } else {
       pendingVideoId = id;
     }
